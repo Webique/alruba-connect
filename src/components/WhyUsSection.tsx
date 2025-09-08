@@ -1,5 +1,4 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Card, CardContent } from '@/components/ui/card';
 import { 
   Users, 
   Leaf, 
@@ -12,87 +11,106 @@ const features = [
   {
     icon: Users,
     textKey: 'experiencedTeam',
-    color: 'bg-blue-500',
+    gradient: 'from-blue-500 to-purple-600',
   },
   {
     icon: Leaf,
     textKey: 'ecoFriendly',
-    color: 'bg-green-500',
+    gradient: 'from-green-500 to-emerald-600',
   },
   {
     icon: Settings,
     textKey: 'customizedSolutions',
-    color: 'bg-purple-500',
+    gradient: 'from-purple-500 to-pink-600',
   },
   {
     icon: DollarSign,
     textKey: 'competitivePricing',
-    color: 'bg-yellow-500',
+    gradient: 'from-yellow-500 to-orange-600',
   },
   {
     icon: Shield,
     textKey: 'reliableService',
-    color: 'bg-red-500',
+    gradient: 'from-red-500 to-rose-600',
   },
 ];
 
 export const WhyUsSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="why-us" className="py-24 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5"></div>
       
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-secondary rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/20 rounded-full blur-3xl"></div>
+      {/* Decorative background shapes */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-l from-secondary to-primary rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-800 animate-fade-in-up">
-            {t('whyUsTitle')}
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <Card 
-                  key={feature.textKey} 
-                  className="group hover-lift bg-white shadow-lg hover:shadow-2xl border-0 animate-scale-in overflow-hidden"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <CardContent className="p-8 text-center">
-                    <div className={`w-20 h-20 mx-auto mb-6 ${feature.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="w-10 h-10 text-white" />
-                    </div>
-                    <div className="space-y-4">
-                      <p className="text-gray-700 leading-relaxed text-lg font-medium">
-                        {t(feature.textKey)}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <div className="inline-block">
+            <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent mb-6 animate-fade-in-up">
+              {t('whyUsTitle')}
+            </h2>
+            <div className="w-32 h-2 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full animate-scale-in"></div>
           </div>
         </div>
 
-        {/* Bottom decoration */}
-        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-          <div className="inline-flex items-center space-x-2 rtl:space-x-reverse bg-white rounded-full px-8 py-4 shadow-lg">
-            <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-            <span className="text-gray-600 font-medium">
+        {/* Features Grid */}
+        <div className="max-w-6xl mx-auto">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            const isEven = index % 2 === 0;
+            
+            return (
+              <div 
+                key={feature.textKey}
+                className={`flex flex-col lg:flex-row items-center gap-12 mb-20 last:mb-0 animate-fade-in-up ${
+                  !isEven && language === 'en' ? 'lg:flex-row-reverse' : ''
+                } ${
+                  isEven && language === 'ar' ? 'lg:flex-row-reverse' : ''
+                }`}
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                {/* Icon Side */}
+                <div className="flex-1 flex justify-center">
+                  <div className="relative">
+                    <div className={`w-32 h-32 bg-gradient-to-br ${feature.gradient} rounded-3xl flex items-center justify-center shadow-2xl transform rotate-6 hover:rotate-12 transition-transform duration-500`}>
+                      <Icon className="w-16 h-16 text-white" />
+                    </div>
+                    {/* Floating decoration */}
+                    <div className={`absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br ${feature.gradient} rounded-full animate-pulse`}></div>
+                    <div className={`absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br ${feature.gradient} rounded-full animate-bounce`} style={{ animationDelay: '0.5s' }}></div>
+                  </div>
+                </div>
+
+                {/* Text Side */}
+                <div className="flex-1 text-center lg:text-left">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/40 hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-medium">
+                      {t(feature.textKey)}
+                    </p>
+                    {/* Decorative line */}
+                    <div className={`w-20 h-1 bg-gradient-to-r ${feature.gradient} mt-4 rounded-full ${language === 'ar' ? 'mr-auto' : 'ml-auto lg:ml-0'}`}></div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-20 animate-fade-in-up" style={{ animationDelay: '1s' }}>
+          <div className="inline-flex items-center bg-gradient-to-r from-primary to-secondary text-white rounded-full px-12 py-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
+            <div className="w-4 h-4 bg-white rounded-full animate-pulse mr-4 rtl:ml-4 rtl:mr-0"></div>
+            <span className="text-xl font-bold">
               {t('coverage')}
             </span>
-            <div className="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+            <div className="w-4 h-4 bg-white rounded-full animate-pulse ml-4 rtl:mr-4 rtl:ml-0" style={{ animationDelay: '0.5s' }}></div>
           </div>
         </div>
       </div>
