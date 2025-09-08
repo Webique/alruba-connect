@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, Instagram } from 'lucide-react';
 
 export const CtaSection = () => {
   const { t, language } = useLanguage();
@@ -56,6 +56,15 @@ export const CtaSection = () => {
             >
               <MessageCircle className="w-6 h-6 mr-3 rtl:ml-3 rtl:mr-0" />
               {t('whatsapp')}
+            </Button>
+            
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white text-lg px-10 py-6 rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:scale-105 font-semibold min-w-[200px] border-0"
+              onClick={() => window.open('https://instagram.com/abraj4cleaning')}
+            >
+              <Instagram className="w-6 h-6 mr-3 rtl:ml-3 rtl:mr-0" />
+              {language === 'ar' ? 'إنستغرام' : 'Instagram'}
             </Button>
           </div>
           

@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Instagram } from 'lucide-react';
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -60,6 +61,15 @@ export const Footer = () => {
               <p className="text-white/70">
                 <span className="text-primary font-medium">{t('phoneLabel')}:</span> 0553364426
               </p>
+              <div className="flex items-center justify-center md:justify-end mt-4">
+                <button
+                  onClick={() => window.open('https://instagram.com/abraj4cleaning')}
+                  className="flex items-center space-x-2 rtl:space-x-reverse text-white/70 hover:text-white transition-colors"
+                >
+                  <Instagram className="w-4 h-4" />
+                  <span>@abraj4cleaning</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
