@@ -50,7 +50,6 @@ export const HeroSection = () => {
               <div className="relative">
                 {/* Decorative Elements */}
                 <div className="relative w-full h-96 lg:h-[500px] flex items-center justify-center">
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-3xl backdrop-blur-sm"></div>
                   
                   {/* Floating Elements */}
                   <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#3dbcd1] rounded-full opacity-80 animate-bounce"></div>
