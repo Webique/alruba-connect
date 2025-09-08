@@ -20,7 +20,7 @@ export const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className={`max-w-4xl mx-auto ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+        <div className={`max-w-4xl ${language === 'ar' ? 'ml-auto text-right' : 'mr-auto text-left'}`}>
           {/* Text Content */}
           <div className="animate-fade-in-up">
             <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight ${language === 'ar' ? 'text-right' : 'text-left'}`}>
