@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Button } from '@/components/ui/button';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export const Header = () => {
   const { language, setLanguage, isRTL, t } = useLanguage();
@@ -24,12 +23,12 @@ export const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2 rtl:space-x-reverse">
-            <div className="text-2xl font-bold">
-              <span className="text-primary">أبراج الربى</span>
-              <span className="text-muted-foreground mx-2">|</span>
-              <span className="text-secondary">Abraj AlRuba</span>
-            </div>
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/b034660a-2fe8-49d6-aa67-b7d87773ccff.png" 
+              alt="Abraj AlRuba Logo" 
+              className="h-12 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -58,31 +57,16 @@ export const Header = () => {
             >
               {t('whyUs')}
             </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              {t('contact')}
-            </button>
           </div>
 
-          {/* Language Toggle & CTA */}
-          <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+          {/* Language Toggle */}
+          <div className="hidden md:flex items-center">
             <button
               onClick={toggleLanguage}
               className="px-3 py-1 rounded-lg border border-border hover:bg-accent transition-colors text-sm font-medium"
             >
               {language === 'ar' ? 'EN' : 'العربية'}
             </button>
-            <Button 
-              variant="default" 
-              size="sm" 
-              className="btn-brand"
-              onClick={() => window.open('tel:0553364426')}
-            >
-              <Phone className="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0" />
-              0553364426
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -122,29 +106,14 @@ export const Header = () => {
               >
                 {t('whyUs')}
               </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
-              >
-                {t('contact')}
-              </button>
               
-              <div className="flex items-center justify-between pt-4 border-t border-border">
+              <div className="flex justify-start pt-4 border-t border-border">
                 <button
                   onClick={toggleLanguage}
                   className="px-3 py-1 rounded-lg border border-border hover:bg-accent transition-colors text-sm font-medium"
                 >
                   {language === 'ar' ? 'EN' : 'العربية'}
                 </button>
-                <Button 
-                  variant="default" 
-                  size="sm" 
-                  className="btn-brand"
-                  onClick={() => window.open('tel:0553364426')}
-                >
-                  <Phone className="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0" />
-                  0553364426
-                </Button>
               </div>
             </div>
           </div>

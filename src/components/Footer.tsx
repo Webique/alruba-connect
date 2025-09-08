@@ -48,12 +48,6 @@ export const Footer = () => {
               >
                 {t('services')}
               </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="block w-full text-white/70 hover:text-primary transition-colors text-sm"
-              >
-                {t('contact')}
-              </button>
             </div>
           </div>
 
