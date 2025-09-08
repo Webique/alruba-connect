@@ -20,9 +20,16 @@ export const CtaSection = () => {
         <div className="max-w-4xl mx-auto text-center text-white">
           {/* Main heading */}
           <div className="mb-16 animate-fade-in-up">
-            <h3 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h3 className="text-5xl md:text-7xl font-bold mb-4 leading-tight bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
               {language === 'ar' ? 'تواصل معنا' : 'Contact Us'}
             </h3>
+            <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-amber-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              {language === 'ar' 
+                ? 'نحن هنا لخدمتكم. اختر الطريقة الأنسب للتواصل'
+                : 'We are here to serve you. Choose your preferred way to connect'
+              }
+            </p>
           </div>
           
           {/* Contact buttons */}
