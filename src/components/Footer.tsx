@@ -16,10 +16,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Logo & Description */}
           <div className="text-center md:text-left">
-            <div className="text-2xl font-bold mb-4">
-              <span className="text-primary">أبراج الربى</span>
-              <span className="text-muted mx-2">|</span>
-              <span className="text-secondary">Abraj AlRuba</span>
+            <div className="mb-4 flex justify-center md:justify-start">
+              <img 
+                src="/lovable-uploads/b034660a-2fe8-49d6-aa67-b7d87773ccff.png" 
+                alt="Abraj AlRuba Logo" 
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-white/70 text-sm">
               {t('serviceNote')}
@@ -58,9 +60,6 @@ export const Footer = () => {
               <p className="text-white/70">
                 <span className="text-primary font-medium">{t('phoneLabel')}:</span> 0553364426
               </p>
-              <p className="text-white/70">
-                <span className="text-secondary font-medium">{t('websiteLabel')}:</span> www.abraj-alruba.com
-              </p>
             </div>
           </div>
         </div>
@@ -69,9 +68,6 @@ export const Footer = () => {
         <div className="border-t border-white/20 pt-8 text-center">
           <p className="text-white/60 text-sm">
             {t('copyright')}
-          </p>
-          <p className="text-white/60 text-sm mt-1">
-            www.abraj-alruba.com
           </p>
         </div>
       </div>
