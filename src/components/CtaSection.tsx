@@ -30,16 +30,8 @@ export const CtaSection = () => {
             <div className="w-24 h-1 bg-white/30 mx-auto rounded-full"></div>
           </div>
           
-          {/* Phone number display */}
-          <div className="mb-12 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-            <div className="inline-flex items-center bg-white/15 backdrop-blur-md rounded-2xl px-8 py-4 border border-white/20">
-              <Phone className="w-6 h-6 mr-4 rtl:ml-4 rtl:mr-0 text-white/90" />
-              <span className="text-2xl md:text-3xl font-bold tracking-wider">0553364426</span>
-            </div>
-          </div>
-          
           {/* Action buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <Button 
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 text-lg px-10 py-6 rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:scale-105 font-semibold min-w-[200px]"
