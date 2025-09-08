@@ -20,47 +20,34 @@ export const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${language === 'ar' ? 'lg:grid-cols-[1.2fr_0.8fr]' : 'lg:grid-cols-[0.8fr_1.2fr]'}`}>
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Text Content */}
+          <div className="animate-fade-in-up">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              <span className="block text-white">{t('heroTitle')}</span>
+            </h1>
+            <p className="text-lg md:text-xl mb-8 text-white/90 leading-relaxed max-w-2xl mx-auto">
+              {t('heroSubtitle')}
+            </p>
             
-            {/* Text Content */}
-            <div className={`animate-fade-in-up ${language === 'ar' ? 'lg:order-1 text-right' : 'lg:order-1 text-left'}`}>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                <span className="block text-white">{t('heroTitle')}</span>
-              </h1>
-              <p className="text-lg md:text-xl mb-8 text-white/90 leading-relaxed max-w-2xl">
-                {t('heroSubtitle')}
-              </p>
-              
-              {/* Single WhatsApp Button */}
-              <div className="flex justify-start">
-                <Button 
-                  size="lg" 
-                  className="bg-[#ee791d] hover:bg-[#d96a18] text-white text-lg px-8 py-4 hover-lift shadow-lg transform transition-all duration-300 hover:scale-105"
-                  onClick={openWhatsApp}
-                >
-                  <MessageCircle className="w-6 h-6 mr-3 rtl:ml-3 rtl:mr-0" />
-                  {language === 'ar' ? 'تواصل عبر واتساب' : 'Contact via WhatsApp'}
-                </Button>
-              </div>
-            </div>
-
-            {/* Visual Content Side */}
-            <div className={`animate-scale-in ${language === 'ar' ? 'lg:order-2' : 'lg:order-2'}`} style={{ animationDelay: '0.2s' }}>
-              <div className="relative">
-                {/* Decorative Elements */}
-                <div className="relative w-full h-96 lg:h-[500px] flex items-center justify-center">
-                  
-                  {/* Floating Elements */}
-                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#3dbcd1] rounded-full opacity-80 animate-bounce"></div>
-                  <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#ee791d] rounded-full opacity-60 animate-pulse"></div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/20 rounded-full blur-xl"></div>
-                  <div className="absolute top-10 right-10 w-12 h-12 bg-[#ee791d] rounded-full opacity-40 animate-pulse" style={{ animationDelay: '1s' }}></div>
-                  <div className="absolute bottom-20 left-20 w-8 h-8 bg-[#3dbcd1] rounded-full opacity-60 animate-bounce" style={{ animationDelay: '1.5s' }}></div>
-                </div>
-              </div>
+            {/* Single WhatsApp Button */}
+            <div className="flex justify-center">
+              <Button 
+                size="lg" 
+                className="bg-[#ee791d] hover:bg-[#d96a18] text-white text-lg px-8 py-4 hover-lift shadow-lg transform transition-all duration-300 hover:scale-105"
+                onClick={openWhatsApp}
+              >
+                <MessageCircle className="w-6 h-6 mr-3 rtl:ml-3 rtl:mr-0" />
+                {language === 'ar' ? 'تواصل عبر واتساب' : 'Contact via WhatsApp'}
+              </Button>
             </div>
           </div>
+
+          {/* Floating Elements around the content */}
+          <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#3dbcd1] rounded-full opacity-80 animate-bounce"></div>
+          <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#ee791d] rounded-full opacity-60 animate-pulse"></div>
+          <div className="absolute top-10 right-10 w-12 h-12 bg-[#ee791d] rounded-full opacity-40 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-20 left-20 w-8 h-8 bg-[#3dbcd1] rounded-full opacity-60 animate-bounce" style={{ animationDelay: '1.5s' }}></div>
         </div>
 
         {/* Scroll Indicator */}
