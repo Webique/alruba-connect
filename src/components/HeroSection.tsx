@@ -20,18 +20,18 @@ export const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-right">
+        <div className={`max-w-4xl mx-auto ${language === 'ar' ? 'text-right' : 'text-left'}`}>
           {/* Text Content */}
           <div className="animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-right">
+            <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight ${language === 'ar' ? 'text-right' : 'text-left'}`}>
               <span className="block text-white">{t('heroTitle')}</span>
             </h1>
-            <p className="text-lg md:text-xl mb-8 text-white/90 leading-relaxed max-w-2xl text-right">
+            <p className={`text-lg md:text-xl mb-8 text-white/90 leading-relaxed max-w-2xl ${language === 'ar' ? 'text-right mr-0' : 'text-left ml-0'}`}>
               {t('heroSubtitle')}
             </p>
             
             {/* Single WhatsApp Button */}
-            <div className="flex justify-end">
+            <div className={`flex ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
               <Button 
                 size="lg" 
                 className="bg-[#ee791d] hover:bg-[#d96a18] text-white text-lg px-8 py-4 hover-lift shadow-lg transform transition-all duration-300 hover:scale-105"
