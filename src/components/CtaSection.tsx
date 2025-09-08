@@ -1,73 +1,112 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import { Phone, MessageCircle, Instagram } from 'lucide-react';
+import { ArrowRight, MessageSquare, Calendar } from 'lucide-react';
 
 export const CtaSection = () => {
   const { t, language } = useLanguage();
 
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Background with gradient and patterns */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary"></div>
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute w-2 h-2 bg-white rounded-full animate-pulse" style={{ top: '20%', left: '10%' }}></div>
-        <div className="absolute w-1 h-1 bg-white rounded-full animate-pulse" style={{ top: '60%', left: '80%', animationDelay: '1s' }}></div>
-        <div className="absolute w-3 h-3 bg-white rounded-full animate-pulse" style={{ top: '80%', left: '20%', animationDelay: '2s' }}></div>
+      {/* Background with subtle gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black"></div>
+      
+      {/* Subtle decorative elements */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-orange-400 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-amber-500 rounded-full blur-3xl"></div>
       </div>
       
-      {/* Decorative elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-secondary/20 rounded-full blur-lg animate-bounce"></div>
-      
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center text-white">
+        <div className="max-w-5xl mx-auto text-center text-white">
           {/* Main heading */}
-          <div className="mb-12 animate-fade-in-up">
-            <h3 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-              {t('ctaText')}
+          <div className="mb-16 animate-fade-in-up">
+            <h3 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              {language === 'ar' ? 'جاهزون لخدمتكم' : 'Ready to Serve You'}
             </h3>
-            <div className="w-24 h-1 bg-white/30 mx-auto rounded-full"></div>
-          </div>
-          
-          {/* Action buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-white/90 text-lg px-10 py-6 rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:scale-105 font-semibold min-w-[200px]"
-              onClick={() => window.open('tel:0553364426')}
-            >
-              <Phone className="w-6 h-6 mr-3 rtl:ml-3 rtl:mr-0" />
-              {t('call')}
-            </Button>
-            
-            <Button 
-              size="lg" 
-              className="bg-[#25D366] hover:bg-[#128C7E] text-white text-lg px-10 py-6 rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:scale-105 font-semibold min-w-[200px] border-0"
-              onClick={() => window.open('https://wa.me/966553364426')}
-            >
-              <MessageCircle className="w-6 h-6 mr-3 rtl:ml-3 rtl:mr-0" />
-              {t('whatsapp')}
-            </Button>
-            
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white text-lg px-10 py-6 rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:scale-105 font-semibold min-w-[200px] border-0"
-              onClick={() => window.open('https://instagram.com/abraj4cleaning')}
-            >
-              <Instagram className="w-6 h-6 mr-3 rtl:ml-3 rtl:mr-0" />
-              {language === 'ar' ? 'إنستغرام' : 'Instagram'}
-            </Button>
-          </div>
-          
-          {/* Additional info */}
-          <div className="mt-12 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               {language === 'ar' 
-                ? 'نحن هنا لخدمتكم على مدار الساعة. تواصلوا معنا الآن للحصول على استشارة مجانية' 
-                : 'We are here to serve you 24/7. Contact us now for a free consultation'
+                ? 'احصلوا على خدمات الصيانة المتكاملة بأعلى معايير الجودة والمهنية'
+                : 'Get comprehensive maintenance services with the highest standards of quality and professionalism'
               }
             </p>
+          </div>
+          
+          {/* Professional action buttons */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            {/* Get Quote */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+              <Calendar className="w-12 h-12 text-orange-400 mx-auto mb-4" />
+              <h4 className="text-xl font-semibold mb-3">
+                {language === 'ar' ? 'احجز موعد' : 'Book Appointment'}
+              </h4>
+              <p className="text-gray-300 mb-6">
+                {language === 'ar' ? 'احجز موعداً مجانياً لتقييم احتياجاتك' : 'Book a free appointment to assess your needs'}
+              </p>
+              <Button 
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-semibold w-full"
+                onClick={() => window.open('tel:0553364426')}
+              >
+                {language === 'ar' ? 'احجز الآن' : 'Book Now'}
+                <ArrowRight className="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0" />
+              </Button>
+            </div>
+
+            {/* Consultation */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+              <MessageSquare className="w-12 h-12 text-amber-400 mx-auto mb-4" />
+              <h4 className="text-xl font-semibold mb-3">
+                {language === 'ar' ? 'استشارة مجانية' : 'Free Consultation'}
+              </h4>
+              <p className="text-gray-300 mb-6">
+                {language === 'ar' ? 'تحدث مع خبرائنا واحصل على استشارة مجانية' : 'Talk to our experts and get free consultation'}
+              </p>
+              <Button 
+                className="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-3 rounded-xl font-semibold w-full"
+                onClick={() => window.open('https://wa.me/966553364426')}
+              >
+                {language === 'ar' ? 'تواصل معنا' : 'Contact Us'}
+                <ArrowRight className="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0" />
+              </Button>
+            </div>
+
+            {/* Emergency */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
+              <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold text-xl">24</span>
+              </div>
+              <h4 className="text-xl font-semibold mb-3">
+                {language === 'ar' ? 'خدمة طوارئ' : 'Emergency Service'}
+              </h4>
+              <p className="text-gray-300 mb-6">
+                {language === 'ar' ? 'متوفرون على مدار الساعة لحالات الطوارئ' : 'Available 24/7 for emergency situations'}
+              </p>
+              <Button 
+                variant="outline"
+                className="border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-white px-8 py-3 rounded-xl font-semibold w-full"
+                onClick={() => window.open('tel:0553364426')}
+              >
+                {language === 'ar' ? 'اتصال طوارئ' : 'Emergency Call'}
+                <ArrowRight className="w-4 h-4 ml-2 rtl:mr-2 rtl:ml-0" />
+              </Button>
+            </div>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+            <div className="flex flex-wrap justify-center items-center gap-8 text-gray-300">
+              <div className="flex items-center">
+                <div className="w-2 h-2 bg-green-400 rounded-full mr-3 rtl:ml-3 rtl:mr-0 animate-pulse"></div>
+                <span>{language === 'ar' ? 'مرخص ومؤمن' : 'Licensed & Insured'}</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-2 h-2 bg-green-400 rounded-full mr-3 rtl:ml-3 rtl:mr-0 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                <span>{language === 'ar' ? 'ضمان الجودة' : 'Quality Guaranteed'}</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-2 h-2 bg-green-400 rounded-full mr-3 rtl:ml-3 rtl:mr-0 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                <span>{language === 'ar' ? 'فريق محترف' : 'Professional Team'}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
