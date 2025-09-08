@@ -11,27 +11,27 @@ const features = [
   {
     icon: Users,
     textKey: 'experiencedTeam',
-    gradient: 'from-blue-500 to-purple-600',
+    gradient: 'from-orange-500 to-amber-600',
   },
   {
     icon: Leaf,
     textKey: 'ecoFriendly',
-    gradient: 'from-green-500 to-emerald-600',
+    gradient: 'from-orange-400 to-orange-600',
   },
   {
     icon: Settings,
     textKey: 'customizedSolutions',
-    gradient: 'from-purple-500 to-pink-600',
+    gradient: 'from-amber-500 to-orange-700',
   },
   {
     icon: DollarSign,
     textKey: 'competitivePricing',
-    gradient: 'from-yellow-500 to-orange-600',
+    gradient: 'from-orange-600 to-red-500',
   },
   {
     icon: Shield,
     textKey: 'reliableService',
-    gradient: 'from-red-500 to-rose-600',
+    gradient: 'from-amber-400 to-orange-500',
   },
 ];
 
@@ -41,22 +41,22 @@ export const WhyUsSection = () => {
   return (
     <section id="why-us" className="py-24 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-secondary/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-amber-50"></div>
       
       {/* Decorative background shapes */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-l from-secondary to-primary rounded-full blur-3xl"></div>
+        <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-orange-400 to-amber-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-l from-amber-500 to-orange-600 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
           <div className="inline-block">
-            <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent mb-6 animate-fade-in-up">
+            <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 bg-clip-text text-transparent mb-6 animate-fade-in-up">
               {t('whyUsTitle')}
             </h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full animate-scale-in"></div>
+            <div className="w-32 h-2 bg-gradient-to-r from-orange-500 to-amber-500 mx-auto rounded-full animate-scale-in"></div>
           </div>
         </div>
 
@@ -105,7 +105,7 @@ export const WhyUsSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-20 animate-fade-in-up" style={{ animationDelay: '1s' }}>
-          <div className="inline-flex items-center bg-gradient-to-r from-primary to-secondary text-white rounded-full px-12 py-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
+          <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-amber-600 text-white rounded-full px-12 py-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
             <div className="w-4 h-4 bg-white rounded-full animate-pulse mr-4 rtl:ml-4 rtl:mr-0"></div>
             <span className="text-xl font-bold">
               {t('coverage')}
