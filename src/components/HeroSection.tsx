@@ -31,16 +31,29 @@ export const HeroSection = () => {
             </p>
             
             {/* Single WhatsApp Button */}
-            <div className={`flex ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
-              <Button 
-                size="lg" 
-                className="bg-[#ee791d] hover:bg-[#d96a18] text-white text-lg px-8 py-4 hover-lift shadow-lg transform transition-all duration-300 hover:scale-105"
-                onClick={openWhatsApp}
-              >
-                <MessageCircle className="w-6 h-6 mr-3 rtl:ml-3 rtl:mr-0" />
-                {language === 'ar' ? 'تواصل عبر واتساب' : 'Contact via WhatsApp'}
-              </Button>
-            </div>
+            {language === 'ar' ? (
+              <div className="flex justify-end">
+                <Button 
+                  size="lg" 
+                  className="bg-[#ee791d] hover:bg-[#d96a18] text-white text-lg px-8 py-4 hover-lift shadow-lg transform transition-all duration-300 hover:scale-105"
+                  onClick={openWhatsApp}
+                >
+                  <MessageCircle className="w-6 h-6 ml-3" />
+                  تواصل عبر واتساب
+                </Button>
+              </div>
+            ) : (
+              <div className="flex justify-start">
+                <Button 
+                  size="lg" 
+                  className="bg-[#ee791d] hover:bg-[#d96a18] text-white text-lg px-8 py-4 hover-lift shadow-lg transform transition-all duration-300 hover:scale-105"
+                  onClick={openWhatsApp}
+                >
+                  <MessageCircle className="w-6 h-6 mr-3" />
+                  Contact via WhatsApp
+                </Button>
+              </div>
+            )}
           </div>
 
           {/* Floating Elements around the content */}
