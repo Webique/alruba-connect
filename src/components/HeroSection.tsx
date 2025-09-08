@@ -52,27 +52,12 @@ export const HeroSection = () => {
                 <div className="relative w-full h-96 lg:h-[500px] flex items-center justify-center">
                   <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-3xl backdrop-blur-sm"></div>
                   
-                  {/* Company Info Card */}
-                  <div className="bg-white/15 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20 max-w-sm w-full">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-[#ee791d] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <MessageCircle className="w-8 h-8 text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold mb-2 text-white">
-                        {language === 'ar' ? 'أبراج الربى' : 'Abraj AlRuba'}
-                      </h3>
-                      <p className="text-white/80 mb-4 text-sm">
-                        {language === 'ar' ? 'خدمات الصيانة المتكاملة' : 'Integrated Maintenance Services'}
-                      </p>
-                      <div className="flex items-center justify-center space-x-2 rtl:space-x-reverse text-[#ee791d]">
-                        <span className="font-semibold">0553364426</span>
-                      </div>
-                    </div>
-                  </div>
-                  
                   {/* Floating Elements */}
                   <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#3dbcd1] rounded-full opacity-80 animate-bounce"></div>
                   <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#ee791d] rounded-full opacity-60 animate-pulse"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/20 rounded-full blur-xl"></div>
+                  <div className="absolute top-10 right-10 w-12 h-12 bg-[#ee791d] rounded-full opacity-40 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                  <div className="absolute bottom-20 left-20 w-8 h-8 bg-[#3dbcd1] rounded-full opacity-60 animate-bounce" style={{ animationDelay: '1.5s' }}></div>
                 </div>
               </div>
             </div>
