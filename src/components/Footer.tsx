@@ -58,10 +58,15 @@ export const Footer = () => {
           {/* Contact Info */}
           <div className="text-center md:text-right">
             <h4 className="font-semibold mb-4 text-white">{t('contact')}</h4>
-            <div className="space-y-2 text-sm">
-              <p className="text-white/70">
-                <span className="text-primary font-medium">{t('phoneLabel')}:</span> 0553364426
-              </p>
+            <div className="space-y-3 text-sm">
+              <div className="text-center md:text-right">
+                <span className="text-primary font-medium">{t('phoneLabel')}:</span>
+                <span className="text-white/70 block">+966 543767765</span>
+              </div>
+              <div className="text-center md:text-right">
+                <span className="text-primary font-medium">Email:</span>
+                <span className="text-white/70 block">Sales@abraj-alruba.com</span>
+              </div>
               <div className="flex items-center justify-center md:justify-end mt-4">
                 <button
                   onClick={() => window.open('https://instagram.com/abraj4cleaning')}
