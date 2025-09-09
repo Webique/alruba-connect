@@ -81,12 +81,12 @@ export const ServicesSection = () => {
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Image section */}
-              <div className="flex-1">
-                <div className="w-fit mx-auto rounded-2xl overflow-hidden bg-white shadow-md">
+              <div className="flex-1 flex justify-center">
+                <div className="w-fit rounded-2xl overflow-hidden bg-white shadow-md">
                   <img
                     src={service.image}
                     alt={service.alt}
-                    className="block w-full max-w-lg h-64 md:h-72 object-contain"
+                    className="block h-64 md:h-72 object-contain"
                   />
                 </div>
               </div>
