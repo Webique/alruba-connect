@@ -28,6 +28,7 @@ export const Footer = () => {
               {t('serviceNote')}
             </p>
           </div>
+          
 
           {/* Quick Links */}
           <div className="text-center">
