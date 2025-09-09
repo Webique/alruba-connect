@@ -1,5 +1,4 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Card, CardContent } from '@/components/ui/card';
 import generalMaintenanceImg from '@/assets/general-maintenance.jpg';
 import electricalServicesImg from '@/assets/electrical-services.jpg';
 import airConditioningImg from '@/assets/air-conditioning.jpg';
@@ -50,47 +49,75 @@ export const ServicesSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="py-20 bg-accent/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground animate-fade-in-up">
+    <section id="services" className="py-24 relative overflow-hidden">
+      {/* Background with theme colors */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100"></div>
+      <div className="absolute inset-0 bg-gradient-to-tl from-[#ee791d]/5 via-transparent to-[#3dbcd1]/5"></div>
+      
+      {/* Subtle background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-64 h-64 bg-[#ee791d] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-[#3dbcd1] rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Enhanced header */}
+        <div className="text-center mb-20 animate-fade-in-up">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-gray-900">
             {t('servicesTitle')}
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#ee791d] to-[#3dbcd1] mx-auto rounded-full mb-8"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            {t('coverage')}
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {/* Modern services layout */}
+        <div className="space-y-16">
           {services.map((service, index) => (
-            <Card 
-              key={service.titleKey} 
-              className="hover-lift bg-white shadow-card border-0 group animate-scale-in overflow-hidden"
-              style={{ animationDelay: `${index * 0.1}s` }}
+            <div 
+              key={service.titleKey}
+              className={`group animate-fade-in-up ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex flex-col md:flex items-center gap-12`}
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <CardContent className="p-0">
-                <div className="relative w-full h-48 overflow-hidden">
+              {/* Image section */}
+              <div className="flex-1">
+                <div className="w-fit mx-auto rounded-2xl overflow-hidden bg-white shadow-md">
                   <img
                     src={service.image}
                     alt={service.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="block w-full max-w-lg h-64 md:h-72 object-contain"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-3 text-foreground">
+              </div>
+              
+              {/* Content section */}
+              <div className="flex-1 space-y-6 text-center md:text-left">
+                <div className="space-y-4">
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 group-hover:text-[#ee791d] transition-colors duration-300">
                     {t(service.titleKey)}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    {t(service.descKey)}
-                  </p>
+                  <div className="w-16 h-1 bg-gradient-to-r from-[#ee791d] to-[#3dbcd1] rounded-full mx-auto md:mx-0"></div>
                 </div>
-              </CardContent>
-            </Card>
+                
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  {t(service.descKey)}
+                </p>
+                
+                {/* Call to action */}
+                <div className="pt-4 flex justify-center md:justify-start">
+                  <button onClick={() => window.open('https://wa.me/966553364426', '_blank')} className="inline-flex items-center text-[#ee791d] font-semibold hover:text-[#d96a18] transition-colors duration-300 group-hover:translate-x-2 transform transition-transform">
+                    <span className="mr-2">
+                      {t('callNow')}
+                    </span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
           ))}
-        </div>
-
-        <div className="text-center">
-          <p className="text-sm text-muted-foreground bg-secondary/10 inline-block px-4 py-2 rounded-full">
-            {t('coverage')}
-          </p>
         </div>
       </div>
     </section>
