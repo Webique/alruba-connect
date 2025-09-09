@@ -50,12 +50,14 @@ export const CtaSection = () => {
                   <button 
                     onClick={() => window.open('https://wa.me/966543767765')}
                     className="text-2xl font-bold text-white hover:text-[#3dbcd1] transition-colors duration-300 cursor-pointer block"
+                    dir="ltr"
                   >
                     +966 543767765
                   </button>
                   <button 
                     onClick={() => window.open('https://wa.me/966553364426')}
                     className="text-2xl font-bold text-white hover:text-[#3dbcd1] transition-colors duration-300 cursor-pointer block"
+                    dir="ltr"
                   >
                     +966 553364426
                   </button>

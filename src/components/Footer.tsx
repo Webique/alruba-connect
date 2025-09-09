@@ -61,11 +61,11 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="text-center md:text-right">
                 <span className="text-primary font-medium">{t('phoneLabel')}:</span>
-                <span className="text-white/70 block">+966 543767765</span>
+                <span className="text-white/70 block" dir="ltr">+966 543767765</span>
               </div>
               <div className="text-center md:text-right">
                 <span className="text-primary font-medium">Email:</span>
-                <span className="text-white/70 block">Sales@abraj-alruba.com</span>
+                <span className="text-white/70 block" dir="ltr">Sales@abraj-alruba.com</span>
               </div>
               <div className="flex items-center justify-center md:justify-end mt-4">
                 <button
