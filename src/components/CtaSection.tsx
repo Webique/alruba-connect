@@ -59,7 +59,7 @@ export const CtaSection = () => {
                   <Button 
                     size="lg" 
                     className="flex-1 bg-[#3dbcd1] hover:bg-[#2ba3b8] text-white font-semibold"
-                    onClick={() => window.open('tel:+966543767765')}
+                    onClick={() => window.open('tel:+966553364426')}
                   >
                     <Phone className="w-5 h-5 mr-2" />
                     {t('call')}
@@ -67,7 +67,7 @@ export const CtaSection = () => {
                   <Button 
                     size="lg" 
                     className="flex-1 bg-[#3dbcd1] hover:bg-[#2ba3b8] text-white font-semibold"
-                    onClick={() => window.open('https://wa.me/966543767765')}
+                    onClick={() => window.open('https://wa.me/966553364426')}
                   >
                     <MessageCircle className="w-5 h-5 mr-2" />
                     {t('whatsapp')}
