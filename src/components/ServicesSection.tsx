@@ -8,10 +8,16 @@ import carpetCleaningImg from '@/assets/carpet-cleaning.jpg';
 
 const services = [
   {
-    image: generalMaintenanceImg,
-    titleKey: 'generalMaintenance',
-    descKey: 'generalMaintenanceDesc',
-    alt: 'General Maintenance Services',
+    image: commercialCleaningImg,
+    titleKey: 'commercialCleaning',
+    descKey: 'commercialCleaningDesc',
+    alt: 'Commercial Cleaning Services',
+  },
+  {
+    image: insectControlImg,
+    titleKey: 'insectControl',
+    descKey: 'insectControlDesc',
+    alt: 'Insect Control Services',
   },
   {
     image: electricalServicesImg,
@@ -26,22 +32,16 @@ const services = [
     alt: 'Air Conditioning Services',
   },
   {
-    image: commercialCleaningImg,
-    titleKey: 'commercialCleaning',
-    descKey: 'commercialCleaningDesc',
-    alt: 'Commercial Cleaning Services',
-  },
-  {
-    image: insectControlImg,
-    titleKey: 'insectControl',
-    descKey: 'insectControlDesc',
-    alt: 'Insect Control Services',
-  },
-  {
     image: carpetCleaningImg,
     titleKey: 'carpetCleaning',
     descKey: 'carpetCleaningDesc',
     alt: 'Carpet Cleaning Services',
+  },
+  {
+    image: generalMaintenanceImg,
+    titleKey: 'generalMaintenance',
+    descKey: 'generalMaintenanceDesc',
+    alt: 'General Maintenance Services',
   },
 ];
 

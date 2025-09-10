@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { MessageCircle } from 'lucide-react';
-import heroImage from '@/assets/hero.webp';
+import heroImage from '@/assets/hero1.jpg';
 
 export const HeroSection = () => {
   const { t, language } = useLanguage();
@@ -21,10 +21,10 @@ export const HeroSection = () => {
       ></div>
       
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/70"></div>
       
       {/* Theme color overlay for brand consistency */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#ee791d]/20 via-transparent to-[#3dbcd1]/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#ee791d]/10 via-transparent to-[#3dbcd1]/10"></div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">

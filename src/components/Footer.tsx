@@ -61,6 +61,7 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="text-center md:text-right">
                 <span className="text-primary font-medium">{t('phoneLabel')}:</span>
+                <span className="text-white/70 block" dir="ltr">+966 553364426</span>
                 <span className="text-white/70 block" dir="ltr">+966 543767765</span>
               </div>
               <div className="text-center md:text-right">

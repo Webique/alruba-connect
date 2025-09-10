@@ -88,6 +88,16 @@ const translations = {
     
     // Success message
     requestSent: 'تم إرسال طلبكم بنجاح! سنتواصل معكم قريباً.',
+    
+    // Cleaning Care Section
+    careTitle: 'نهتم بالنظافة لأعلى المعايير',
+    careSubtitle: 'نستخدم مواد معتمدة وآمنة ونحرص على التفاصيل الصغيرة لنقدم نتائج نظافة مبهرة تعكس احترافية أعمالكم.',
+    carePoint1Title: 'نظافة دقيقة',
+    carePoint1: 'فرق متخصصة تهتم بأدق التفاصيل لضمان بيئة نظيفة وصحية.',
+    carePoint2Title: 'جودة مضمونة',
+    carePoint2: 'أساليب تنظيف احترافية ومواد آمنة مع التزام بمعايير الجودة.',
+    carePoint3Title: 'عناية مستمرة',
+    carePoint3: 'خطط تنظيف مرنة ودورية للحفاظ على رونق المكان على الدوام.',
   },
   en: {
     // Navigation
@@ -165,6 +175,16 @@ const translations = {
     
     // Success message
     requestSent: 'Request sent successfully! We will contact you soon.',
+    
+    // Cleaning Care Section
+    careTitle: 'We Care Deeply About Cleanliness',
+    careSubtitle: 'We use approved, safe products and focus on the smallest details to deliver outstanding results that reflect your professionalism.',
+    carePoint1Title: 'Meticulous Cleaning',
+    carePoint1: 'Specialized teams focus on details to ensure a healthy, spotless environment.',
+    carePoint2Title: 'Quality Assured',
+    carePoint2: 'Professional methods and safe products with a commitment to quality standards.',
+    carePoint3Title: 'Ongoing Care',
+    carePoint3: 'Flexible, periodic cleaning plans to keep your space consistently fresh.',
   }
 };
 
