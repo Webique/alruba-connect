@@ -39,7 +39,7 @@ export const WhyUsSection = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section id="why-us" className="py-24 relative overflow-hidden">
+    <section id="why-us" className="py-24 relative overflow-hidden scroll-mt-24">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-amber-50"></div>
       

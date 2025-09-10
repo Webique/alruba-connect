@@ -49,7 +49,7 @@ export const ServicesSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
+    <section id="services" className="py-24 relative overflow-hidden scroll-mt-24">
       {/* Background with theme colors */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100"></div>
       <div className="absolute inset-0 bg-gradient-to-tl from-[#ee791d]/5 via-transparent to-[#3dbcd1]/5"></div>

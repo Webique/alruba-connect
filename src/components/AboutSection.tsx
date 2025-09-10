@@ -4,7 +4,7 @@ export const AboutSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-24 relative overflow-hidden scroll-mt-24">
       {/* Background with subtle pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"></div>
       

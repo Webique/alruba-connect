@@ -6,7 +6,7 @@ export const CtaSection = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden scroll-mt-24">
       {/* Clean Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black"></div>
       

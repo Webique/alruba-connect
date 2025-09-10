@@ -5,7 +5,7 @@ export const CleaningCareSection = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section className="py-20 relative overflow-hidden bg-white">
+    <section className="py-20 relative overflow-hidden bg-white scroll-mt-24">
       {/* background accents */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute -top-10 -right-10 w-56 h-56 bg-[#3dbcd1] rounded-full blur-3xl"></div>

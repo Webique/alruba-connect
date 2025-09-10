@@ -16,6 +16,8 @@ export const Header = () => {
 
   const toggleLanguage = () => {
     setLanguage(language === 'ar' ? 'en' : 'ar');
+    // Close mobile menu after switching language
+    setIsMenuOpen(false);
   };
 
   return (
@@ -73,15 +75,22 @@ export const Header = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-border">
-            <div className="flex flex-col space-y-4">
+        {/* Mobile Menu (animated open/close) */}
+        <div
+          id="mobile-menu"
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+            isMenuOpen ? 'mt-4 py-4 border-t border-border max-h-96 opacity-100' : 'max-h-0 opacity-0 mt-0 py-0 border-t-0'
+          }`}
+          aria-hidden={!isMenuOpen}
+        >
+          <div className={`flex flex-col space-y-4 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`}>
               <button
                 onClick={() => scrollToSection('home')}
                 className="text-left py-2 text-foreground hover:text-primary transition-colors font-medium"
@@ -115,9 +124,8 @@ export const Header = () => {
                   {language === 'ar' ? 'EN' : 'العربية'}
                 </button>
               </div>
-            </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );
